@@ -14,7 +14,7 @@
         padding-top: 0 !important;
     }
 
-    &:not([echelon-system-style="win10"][echelon-style-7][compact-theme]) {
+    &:not([echelon-style-7][echelon-system-style="win10"], [echelon-style-7][compact-theme]) {
         &[sizemode="normal"] {
             #navigator-toolbox {
                 border-top: 1px solid rgb(37, 44, 51) !important;
