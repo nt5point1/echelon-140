@@ -179,11 +179,11 @@ body[dir=rtl] .customSnippet {
 }
 
 #defaultSnippet1 {
-  background-image: url("chrome://userchrome/content/pages/home/images/firefox-14/snippet1.png");
+  background-image: image-set(url("chrome://userchrome/content/pages/home/images/firefox-14/snippet1.png") 1x, url("chrome://userchrome/content/pages/home/images/firefox-14/snippet1@2x.png") 2x);
 }
 
 #defaultSnippet2 {
-  background-image: url("chrome://userchrome/content/pages/home/images/firefox-14/snippet2.png");
+  background-image: image-set(url("chrome://userchrome/content/pages/home/images/firefox-14/snippet2.png") 1x, url("chrome://userchrome/content/pages/home/images/firefox-14/snippet2@2x.png") 2x);
 }
 
 #snippets {
@@ -293,35 +293,35 @@ body[narrow] #restorePreviousSession {
 }
 
 #downloads::before {
-  content: url("chrome://userchrome/content/pages/home/images/firefox-14/downloads.png");
+  content: image-set(url("chrome://userchrome/content/pages/home/images/firefox-14/downloads.png") 1x, url("chrome://userchrome/content/pages/home/images/firefox-14/downloads@2x.png") 2x);
 }
 
 #bookmarks::before {
-  content: url("chrome://userchrome/content/pages/home/images/firefox-14/bookmarks.png");
+  content: image-set(url("chrome://userchrome/content/pages/home/images/firefox-14/bookmarks.png") 1x, url("chrome://userchrome/content/pages/home/images/firefox-14/bookmarks@2x.png") 2x);
 }
 
 #history::before {
-  content: url("chrome://userchrome/content/pages/home/images/firefox-14/history.png");
+  content: image-set(url("chrome://userchrome/content/pages/home/images/firefox-14/history.png") 1x, url("chrome://userchrome/content/pages/home/images/firefox-14/history@2x.png") 2x);
 }
 
 #apps::before {
-  content: url("chrome://userchrome/content/pages/home/images/firefox-14/apps.png");
+  content: image-set(url("chrome://userchrome/content/pages/home/images/firefox-14/apps.png") 1x, url("chrome://userchrome/content/pages/home/images/firefox-14/apps@2x.png") 2x);
 }
 
 #addons::before {
-  content: url("chrome://userchrome/content/pages/home/images/firefox-14/addons.png");
+  content: image-set(url("chrome://userchrome/content/pages/home/images/firefox-14/addons.png") 1x, url("chrome://userchrome/content/pages/home/images/firefox-14/addons@2x.png") 2x);
 }
 
 #sync::before {
-  content: url("chrome://userchrome/content/pages/home/images/firefox-14/sync.png");
+  content: image-set(url("chrome://userchrome/content/pages/home/images/firefox-14/sync.png") 1x, url("chrome://userchrome/content/pages/home/images/firefox-14/sync@2x.png") 2x);
 }
 
 #settings::before {
-  content: url("chrome://userchrome/content/pages/home/images/firefox-14/settings.png");
+  content: image-set(url("chrome://userchrome/content/pages/home/images/firefox-14/settings.png") 1x, url("chrome://userchrome/content/pages/home/images/firefox-14/settings@2x.png") 2x);
 }
 
 #restorePreviousSession::before {
-  content: url("chrome://userchrome/content/pages/home/images/firefox-14/restore-large.png");
+  content: image-set(url("chrome://userchrome/content/pages/home/images/firefox-14/restore-large.png") 1x, url("chrome://userchrome/content/pages/home/images/firefox-14/restore-large@2x.png") 2x);
   height: 48px;
   width: 48px;
   display: inline-block;
@@ -336,7 +336,7 @@ body[dir=rtl] #restorePreviousSession::before {
 }
 
 body[narrow] #restorePreviousSession::before {
-  content: url("chrome://userchrome/content/pages/home/images/firefox-14/restore.png");
+  content: image-set(url("chrome://userchrome/content/pages/home/images/firefox-14/restore.png") 1x, url("chrome://userchrome/content/pages/home/images/firefox-14/restore@2x.png") 2x);
   height: 32px;
   width: 32px;
 }

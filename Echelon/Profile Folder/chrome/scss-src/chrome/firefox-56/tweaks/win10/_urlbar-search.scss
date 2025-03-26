@@ -29,17 +29,19 @@
     }
 
     &:not([chromehidden~="toolbar"]) {
-        #nav-bar {
-            #forward-button.unified-with-urlbar:not(:hover)[disabled] {
-                & + #urlbar-container {
-                    #urlbar-background,
-                    .urlbar-input-container,
-                    #urlbar-input-container {
-                        clip-path: var(--urlbar-back-button-clip-path-win10) !important;
-                    }
+        &:not([lwt-default-theme-in-dark-mode], [compact-theme]) {
+            #nav-bar {
+                #forward-button.unified-with-urlbar:not(:hover)[disabled] {
+                    & + #urlbar-container {
+                        #urlbar-background,
+                        .urlbar-input-container,
+                        #urlbar-input-container {
+                            clip-path: var(--urlbar-back-button-clip-path-win10) !important;
+                        }
 
-                    #identity-icon-box {
-                        padding-inline-start: 10px !important;
+                        #identity-icon-box {
+                            padding-inline-start: 10px !important;
+                        }
                     }
                 }
             }

@@ -10,7 +10,7 @@
             appearance: -moz-win-exclude-glass !important;
         }
 
-        &:not([sizemode=maximized]) {
+        &[tabsintitlebar="true"]:not([sizemode="maximized"]) {
             #navigator-toolbox {
                 margin-top: 1px !important; // show top white border
             }

@@ -12,27 +12,15 @@
         #nav-bar {
             #forward-button.unified-with-urlbar:not(:hover)[disabled] {
                 & + #urlbar-container {           
-                    & > #urlbar,
-                    & > #echelon-urlbar-positioning {
-                        margin-left: -27px !important;
-                    }
-
                     #urlbar-background,
                     .urlbar-input-container,
                     #urlbar-input-container {
-                        mask: unset !important;
+                        clip-path: none !important;
                     }
 
                     #identity-box { 
                         padding-inline-start: 0 !important;
                     }
-                }
-            }
-    
-            #forward-button.unified-with-urlbar {
-                & + #urlbar-container {
-                    padding-inline-start: 27px !important;
-                    margin-inline-start: -27px !important;
                 }
             }
         }

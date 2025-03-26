@@ -186,6 +186,12 @@ class AustralisPanelController
             syncContainer.style.display = "none";
         }
 
+        // Apply default layout of Australis Panel after applying the default browser layout
+        window.addEventListener(
+            "echelon-after-layout-template",
+            this.applyDefaultLayout
+        );
+
         this.echelonUpdates();
     }
 
