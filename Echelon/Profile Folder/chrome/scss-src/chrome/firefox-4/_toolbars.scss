@@ -5,8 +5,13 @@
     --toolbar-border-color: rgba(26, 26, 26, 0.4) !important;
 }
 
+:root[chromehidden~="toolbar"] {
+    #nav-bar {
+        background-color: -moz-Dialog !important;
+    }
+}
+
 #nav-bar {
-    height: 38px !important;
     box-shadow: none !important;
     padding-inline: 2px !important;
     align-items: center !important;
@@ -14,14 +19,18 @@
     position: relative !important;
     border-top: 0 !important;
 
-    :root[tabs-on-top="true"] & {
+    :root:not([chromehidden~="toolbar"]) & {
+        height: 38px !important;
+    }
+
+    :root:not([chromehidden~="toolbar"])[tabs-on-top="true"] & {
         z-index: 1 !important;
         background-color: var(--toolbar-background-color) !important;
         background-image: linear-gradient(var(--toolbar-highlight-top) 15%, var(--toolbar-highlight-bottom)) !important;
         margin-top: calc(-1 * var(--navbar-tab-toolbar-highlight-overlap)) !important;
     }
 
-    :root:not([tabs-on-top="true"]) & {
+    :root:not([chromehidden~="toolbar"]):not([tabs-on-top="true"]) & {
         height: 34px !important;
         padding-block-start: 2px !important;
         padding-block-end: 6px !important;
@@ -29,7 +38,7 @@
         overflow-y: visible !important;
     }
 
-    :root[tabs-on-top="true"]:not([lwtheme]) & {
+    :root[tabs-on-top="true"]:not([chromehidden~="toolbar"]):not([lwtheme]) & {
         border-top: 1px solid var(--toolbar-border-color) !important;
     }
 
@@ -343,6 +352,10 @@
         margin-inline-end: -1px !important;
         opacity: 0 !important;
     }
+}
+
+:root[chromehidden~="toolbar"] #PanelUI-button {
+    visibility: collapse !important;
 }
 
 :root[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"]:not([inactive="true"]) {

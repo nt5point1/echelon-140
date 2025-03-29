@@ -124,8 +124,11 @@ window {
   --toolbar-border-color: rgba(26, 26, 26, 0.4) !important;
 }
 
+:root[chromehidden~=toolbar] #nav-bar {
+  background-color: -moz-Dialog !important;
+}
+
 #nav-bar {
-  height: 38px !important;
   box-shadow: none !important;
   padding-inline: 2px !important;
   align-items: center !important;
@@ -133,20 +136,23 @@ window {
   position: relative !important;
   border-top: 0 !important;
 }
-:root[tabs-on-top=true] #nav-bar {
+:root:not([chromehidden~=toolbar]) #nav-bar {
+  height: 38px !important;
+}
+:root:not([chromehidden~=toolbar])[tabs-on-top=true] #nav-bar {
   z-index: 1 !important;
   background-color: var(--toolbar-background-color) !important;
   background-image: linear-gradient(var(--toolbar-highlight-top) 15%, var(--toolbar-highlight-bottom)) !important;
   margin-top: calc(-1 * var(--navbar-tab-toolbar-highlight-overlap)) !important;
 }
-:root:not([tabs-on-top=true]) #nav-bar {
+:root:not([chromehidden~=toolbar]):not([tabs-on-top=true]) #nav-bar {
   height: 34px !important;
   padding-block-start: 2px !important;
   padding-block-end: 6px !important;
   background-color: transparent !important;
   overflow-y: visible !important;
 }
-:root[tabs-on-top=true]:not([lwtheme]) #nav-bar {
+:root[tabs-on-top=true]:not([chromehidden~=toolbar]):not([lwtheme]) #nav-bar {
   border-top: 1px solid var(--toolbar-border-color) !important;
 }
 #nav-bar #nav-bar-customization-target {
@@ -414,6 +420,10 @@ window {
   max-width: 1px !important;
   margin-inline-end: -1px !important;
   opacity: 0 !important;
+}
+
+:root[chromehidden~=toolbar] #PanelUI-button {
+  visibility: collapse !important;
 }
 
 :root[tabsintitlebar][sizemode=normal] #toolbar-menubar[autohide=true]:not([inactive=true]) {
@@ -1407,6 +1417,9 @@ window {
   min-height: var(--urlbar-min-height) !important;
   padding-block: 0 !important;
   margin-inline-end: 0 !important;
+}
+:root[chromehidden~=toolbar] #urlbar-container {
+  margin-inline-start: 0 !important;
 }
 #urlbar-container:hover #urlbar-background {
   background-color: var(--urlbar-background-color-hover) !important;
@@ -3941,6 +3954,7 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
 }
 
 #customization-container {
+  color: -moz-DialogText !important;
   grid-template-columns: 1fr auto !important;
   grid-template-rows: 1fr auto !important;
 }
@@ -5059,7 +5073,7 @@ xul|dialog[inbrowserwindow] {
 :root[echelon-style-6] #tabsOnTopMenuSeparator {
   visibility: collapse !important;
 }
-:root[echelon-style-6] #nav-bar {
+:root[echelon-style-6]:not([chromehidden~=toolbar]) #nav-bar {
   z-index: 1 !important;
   height: 41px !important;
   box-shadow: 0 1px 0 rgba(253, 253, 253, 0.45) inset !important;
@@ -6042,7 +6056,7 @@ xul|dialog[inbrowserwindow] {
 :root[echelon-style-6][lwtheme=true] #titlebar #titlebar-content .titlebar-buttonbox-container {
   visibility: collapse !important;
 }
-:root[echelon-style-6][lwtheme=true] #titlebar > * {
+:root[echelon-style-6][lwtheme=true] #titlebar > *:not([collapsed=true]) {
   visibility: visible !important;
 }
 :root[echelon-style-6][lwtheme=true][tabsintitlebar][sizemode=normal][echelon-system-style=winxp] #titlebar-content {
@@ -7187,9 +7201,11 @@ xul|dialog[inbrowserwindow] {
   @media (-moz-platform: windows) and (not (-moz-windows-classic)) and (-moz-windows-compositor) {
     :root[echelon-style-7][echelon-style-6][echelon-system-style=win10] {
       appearance: -moz-win-borderless-glass !important;
+      background: transparent !important;
     }
     :root[echelon-style-7][echelon-style-6][echelon-system-style=win10] #browser {
-      appearance: -moz-win-exclude-glass !important;
+      appearance: auto !important;
+      -moz-default-appearance: -moz-win-exclude-glass !important;
     }
     :root[echelon-style-7][echelon-style-6][echelon-system-style=win10][tabsintitlebar=true]:not([sizemode=maximized]) #navigator-toolbox {
       margin-top: 1px !important;

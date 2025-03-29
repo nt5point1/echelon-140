@@ -4,10 +4,12 @@
     @media (-moz-platform: windows) and (not (-moz-windows-classic)) and (-moz-windows-compositor) {
         & {
             appearance: -moz-win-borderless-glass !important; // hack to show white border windows 10 does on dwm extended windows
+            background: transparent !important;
         }
 
         #browser {
-            appearance: -moz-win-exclude-glass !important;
+            appearance: auto !important;
+            -moz-default-appearance: -moz-win-exclude-glass !important;
         }
 
         &[tabsintitlebar="true"]:not([sizemode="maximized"]) {

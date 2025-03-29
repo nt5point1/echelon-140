@@ -550,6 +550,7 @@ checkbox {
 	}
 
 	.content-section-container {
+		transition: height 1000ms;
 		background-color: rgba(255, 255, 255, 0.5);
 		background-image: radial-gradient(50.06% 100% at 49.94% 0%, rgba(23, 45, 68, 0.2) 0%, rgba(23, 45, 68, 0) 100%);
 		background-size: 100% 2px;
@@ -636,6 +637,12 @@ checkbox {
 					}
 				}
 			}
+		}
+	}
+
+	&.hidden {
+		.content-section-container {
+			height: 0;
 		}
 	}
 }

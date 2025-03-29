@@ -10,7 +10,7 @@
             }
         }
 
-        > * {
+        > *:not([collapsed="true"]) {
             visibility: visible !important;
         }
     }

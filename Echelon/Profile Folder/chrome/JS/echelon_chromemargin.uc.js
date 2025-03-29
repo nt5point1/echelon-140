@@ -9,8 +9,9 @@ function chromeMargin() {
     let hiddenTitlebar = Services.appinfo.drawInTitlebar;
     let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Style");
     let platform = AppConstants.platform;
+    let isChromeHidden = document.querySelector(`#main-window[chromehidden~="toolbar"]`);
     
-    if (platform == "win" && hiddenTitlebar == true) {
+    if (platform == "win" && hiddenTitlebar == true && !isChromeHidden) {
         if (style < ECHELON_LAYOUT_FF14)
         {
             window.windowUtils.setChromeMargin(0, 1, 1, 1);

@@ -697,3 +697,9 @@ function buildCredits() {
     });
 }
 document.addEventListener("DOMContentLoaded", buildCredits);
+
+document.querySelectorAll(".content-section .content-section-header").forEach(contentSection => {
+    contentSection.addEventListener("click",  function () {
+        contentSection.parentElement.classList.toggle("hidden")
+    });
+});
