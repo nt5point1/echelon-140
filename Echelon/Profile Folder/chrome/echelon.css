@@ -4211,6 +4211,18 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   --organizer-pane-background: -moz-Field !important;
   --organizer-content-background: var(--organizer-pane-background) !important;
   --organizer-pane-border-color: ThreeDLightShadow !important;
+  --twisty-clsd: url("chrome://echelon/content/firefox-4/xp/tree/twisty-clsd.png") !important;
+  --twisty-clsd-hover: var(--twisty-clsd) !important;
+  --twisty-open: url("chrome://echelon/content/firefox-4/xp/tree/twisty-open.png") !important;
+  --twisty-open-hover: var(--twisty-open) !important;
+  --moz-tree-indentation-width: 18px !important;
+}
+:root:not([echelon-system-style=winxp]) {
+  --twisty-clsd: url("chrome://echelon/content/firefox-4/tree/twisty-clsd.png") !important;
+  --twisty-clsd-hover: url("chrome://echelon/content/firefox-4/tree/twisty-clsd-hover.png") !important;
+  --twisty-open: url("chrome://echelon/content/firefox-4/tree/twisty-open.png") !important;
+  --twisty-open-hover: url("chrome://echelon/content/firefox-4/tree/twisty-open-hover.png") !important;
+  --moz-tree-indentation-width: 12px !important;
 }
 @media all and not (-moz-windows-classic) {
   :root[echelon-appearance-blue] {
@@ -4219,6 +4231,54 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
   }
 }
 
+@-moz-document url("chrome://browser/content/places/places.xhtml") {
+  :root {
+    color-scheme: light !important;
+  }
+  #editBookmarkPanelContent input {
+    cursor: text !important;
+    margin: 2px 4px !important;
+    padding: 2px 3px 3px !important;
+    padding-inline-start: 5px !important;
+    background-color: -moz-Field !important;
+    color: -moz-FieldText !important;
+    border: unset !important;
+    border-radius: unset !important;
+    min-height: unset !important;
+    appearance: auto !important;
+    -moz-default-appearance: textfield !important;
+    outline: 0 !important;
+  }
+  .expander-down,
+  .expander-up {
+    appearance: auto !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: 24px !important;
+    max-height: 24px !important;
+    justify-content: center !important;
+  }
+  .expander-down .button-box,
+  .expander-up .button-box {
+    padding: 0 !important;
+  }
+  .expander-up {
+    list-style-image: url("chrome://echelon/content/firefox-4/places/collapse.png") !important;
+  }
+  .expander-down {
+    list-style-image: url("chrome://echelon/content/firefox-4/places/expand.png") !important;
+  }
+  #editBMPanel_tagsSelector {
+    margin: 2px 4px !important;
+    border: unset !important;
+    border-radius: unset !important;
+    appearance: auto !important;
+    -moz-default-appearance: listbox !important;
+    background-color: -moz-Field !important;
+    color: -moz-FieldText !important;
+  }
+}
 #placesMenu {
   margin-inline-start: 8px !important;
   appearance: none !important;
@@ -4352,6 +4412,159 @@ echelon-splitmenu .splitmenu-menu > .menu-accel-container,
     border-color: var(--organizer-pane-border-color) !important;
   }
 }
+treechildren::-moz-tree-image(title) {
+  list-style-image: var(--default-favicon);
+}
+
+treechildren::-moz-tree-image(title, container) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/bookmarksFolder.png") !important;
+}
+
+treechildren::-moz-tree-image(query) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/query.png") !important;
+}
+
+treechildren::-moz-tree-image(title, query, hostContainer) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/bookmarksFolder.png") !important;
+}
+
+treechildren::-moz-tree-image(container, queryFolder_toolbar_____) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/bookmarksToolbar.png") !important;
+}
+
+treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksMenu) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/bookmarksMenu.png") !important;
+}
+
+treechildren::-moz-tree-image(container, queryFolder_menu________) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/bookmarksMenu.png") !important;
+}
+
+treechildren::-moz-tree-image(query, OrganizerQuery_history____v) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/history.png") !important;
+}
+
+treechildren::-moz-tree-image(title, query, dayContainer) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/history-sidebar.png") !important;
+}
+
+treechildren::-moz-tree-image(query, OrganizerQuery_tags_______v) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/tagContainerIcon.png") !important;
+}
+
+treechildren::-moz-tree-image(title, query, tagContainer) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/tagContainerIcon.png") !important;
+}
+
+treechildren::-moz-tree-image(query, OrganizerQuery_downloads__v) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/downloads.png") !important;
+}
+
+treechildren::-moz-tree-image(container, queryFolder_unfiled_____) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/unsortedBookmarks.png") !important;
+}
+
+treechildren::-moz-tree-image(container, OrganizerQuery_UnfiledBookmarks) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/unsortedBookmarks.png") !important;
+}
+
+treechildren::-moz-tree-image(container, OrganizerQuery_AllBookmarks) {
+  list-style-image: url("chrome://echelon/content/firefox-4/places/allBookmarks.png") !important;
+}
+
+/* sass compiler FUCKING SUCKS SHIT and you can't do
+   &(open) and &(closed) */
+treechildren::-moz-tree-row {
+  outline: 0 !important;
+  min-height: 18px !important;
+  height: 1.3em !important;
+}
+treechildren::-moz-tree-row(hover) {
+  background-color: transparent !important;
+}
+treechildren::-moz-tree-row(selected) {
+  background-color: -moz-cellhighlight !important;
+}
+treechildren::-moz-tree-row(selected, hover), treechildren::-moz-tree-row(selected) {
+  background-color: -moz-Dialog !important;
+  color: -moz-DialogText !important;
+}
+treechildren::-moz-tree-row(selected, hover, focus), treechildren::-moz-tree-row(selected, focus) {
+  background-color: Highlight !important;
+}
+treechildren::-moz-tree-row(current, focus) {
+  border: 1px dotted Highlight !important;
+}
+treechildren::-moz-tree-row(selected, current, focus) {
+  border: 1px dotted #F3D982 !important;
+}
+treechildren::-moz-tree-twisty {
+  width: 9px !important;
+  padding-inline-start: 0 !important;
+  list-style-image: var(--twisty-clsd) !important;
+}
+treechildren::-moz-tree-twisty(hover) {
+  list-style-image: var(--twisty-clsd-hover) !important;
+}
+treechildren::-moz-tree-twisty(open) {
+  list-style-image: var(--twisty-open) !important;
+}
+treechildren::-moz-tree-twisty(hover, open) {
+  list-style-image: var(--twisty-open-hover) !important;
+}
+treechildren::-moz-tree-indentation {
+  width: var(--moz-tree-indentation-width) !important;
+}
+
+:root:not([echelon-system-style=winxp])[echelon-style-5=true][echelon-appearance-newlogo=true][echelon-appearance-blue] treechildren::-moz-tree-row {
+  height: 1.8em !important;
+  color: -moz-FieldText !important;
+  margin-inline-start: 1px !important;
+  margin-inline-end: 1px !important;
+  border: 1px solid transparent !important;
+  border-radius: 3px !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  outline-offset: -2px !important;
+}
+:root:not([echelon-system-style=winxp])[echelon-style-5=true][echelon-appearance-newlogo=true][echelon-appearance-blue] treechildren::-moz-tree-cell-text(selected), :root:not([echelon-system-style=winxp])[echelon-style-5=true][echelon-appearance-newlogo=true][echelon-appearance-blue] treechildren::-moz-tree-cell-text(selected, focus) {
+  color: -moz-FieldText !important;
+}
+:root:not([echelon-system-style=winxp])[echelon-style-5=true][echelon-appearance-newlogo=true][echelon-appearance-blue] treechildren::-moz-tree-row(selected) {
+  border: 1px solid rgb(217, 217, 217) !important;
+  background: linear-gradient(rgba(190, 190, 190, 0.1), rgba(190, 190, 190, 0.4)) !important;
+  outline: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+:root:not([echelon-system-style=winxp])[echelon-style-5=true][echelon-appearance-newlogo=true][echelon-appearance-blue] treechildren::-moz-tree-row(current, focus) {
+  border: 1px solid rgb(125, 162, 206) !important;
+  outline: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+:root:not([echelon-system-style=winxp])[echelon-style-5=true][echelon-appearance-newlogo=true][echelon-appearance-blue] treechildren::-moz-tree-row(selected, focus) {
+  border: 1px solid rgb(132, 172, 221) !important;
+  background: linear-gradient(rgba(131, 183, 249, 0.16), rgba(131, 183, 249, 0.375)) !important;
+  outline: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+:root:not([echelon-system-style=winxp])[echelon-style-5=true][echelon-appearance-newlogo=true][echelon-appearance-blue] treechildren::-moz-tree-row(selected, current, focus) {
+  border: 1px solid rgb(125, 162, 206) !important;
+  background: linear-gradient(rgba(131, 183, 249, 0.28), rgba(131, 183, 249, 0.5)) !important;
+  outline: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+:root:not([echelon-system-style=winxp])[echelon-style-5=true][echelon-appearance-newlogo=true][echelon-appearance-blue] treechildren::-moz-tree-row(hover) {
+  border: 1px solid rgb(184, 214, 251) !important;
+  background: linear-gradient(rgba(131, 183, 249, 0.05), rgba(131, 183, 249, 0.16)) !important;
+  outline: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+:root:not([echelon-system-style=winxp])[echelon-style-5=true][echelon-appearance-newlogo=true][echelon-appearance-blue] treechildren::-moz-tree-row(hover, current) {
+  border: 1px solid rgb(125, 162, 206) !important;
+  background: linear-gradient(rgba(131, 183, 249, 0.05), rgba(131, 183, 249, 0.16)) !important;
+  outline: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+:root:not([echelon-system-style=winxp])[echelon-style-5=true][echelon-appearance-newlogo=true][echelon-appearance-blue] treechildren::-moz-tree-row(hover, selected) {
+  border: 1px solid rgb(125, 162, 206) !important;
+  background: linear-gradient(rgba(131, 183, 249, 0.28), rgba(131, 183, 249, 0.5)) !important;
+  outline: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
 :root[echelon-system-style=winxp]:not([echelon-style-6])[tabs-on-top=true]:not([lwtheme=true]) #TabsToolbar {
   background-image: linear-gradient(to top, rgba(25.5, 25.5, 25.5, 0.4) 1px, rgba(0, 0, 0, 0.05) 1px, transparent 50%) !important;
   background-size: unset !important;
