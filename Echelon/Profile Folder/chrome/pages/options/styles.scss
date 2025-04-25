@@ -28,9 +28,6 @@
 
     &[lwtheme] {
         --card-name-background-color: var(--lwt-accent-color);
-        
-        color: var(--lwt-text-color);
-        // background-color: var(--lwt-accent-color);
 
         &[lwtheme-image] {
             background-image: linear-gradient(to bottom, rgba(180, 193, 205, 0), rgba(180, 193, 205, 0.25)), linear-gradient(to bottom, rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), linear-gradient(to bottom, transparent, var(--lwt-accent-color) 75px), var(--lwt-header-image);
@@ -508,6 +505,8 @@ checkbox {
 		padding-inline: 12px;
 		color: var(--echelon-options-highlight-blue);
 		fill: var(--echelon-options-highlight-blue);
+		transition-property: fill, color !important;
+		transition-duration: 330ms !important;
 		cursor: pointer;
 		align-items: center;
 
@@ -531,6 +530,11 @@ checkbox {
 				right: -1px;
 				bottom: -1px;
 				z-index: 1;
+
+				image {
+					transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+					transition-duration: 330ms !important;
+				}
 			}
 
 			.content-section-header-icon {
@@ -643,6 +647,15 @@ checkbox {
 	&.hidden {
 		.content-section-container {
 			height: 0;
+		}
+
+		.content-section-header {
+			color: #6F7C89;
+			fill: #6F7C89;
+		}
+
+		.content-section-header-badge image {
+			transform: rotateZ(90deg);
 		}
 	}
 }

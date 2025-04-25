@@ -32,7 +32,8 @@
 	&[tabsintitlebar="true"]:not([sizemode="maximized"]) #toolbar-menubar,
 	&:not([sizemode="maximized"]) #TabsToolbar,
 	&[sizemode="maximized"] #titlebar-content,
-	&[sizemode="maximized"] #toolbar-menubar:not([inactive="true"]) + #TabsToolbar {
+	&[sizemode="maximized"] #toolbar-menubar:not([inactive="true"]) + #TabsToolbar,
+	&[tabs-on-top="true"] #nav-bar {
 		.titlebar-buttonbox-container {
 			visibility: collapse !important;
 		}
