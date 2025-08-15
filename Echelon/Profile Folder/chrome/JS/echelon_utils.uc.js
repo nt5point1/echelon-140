@@ -49,12 +49,17 @@ function renderElement(nodeName, attrMap = {}, childrenArr = [])
 	return element;
 }
 
-async function waitForElement(query, parent = this.document, timeout = -1)
+async function waitForElement(query, parent = this.document, timeout = 10000)
 {
 	let startTime = Date.now();
 	
 	while (parent.querySelector(query) == null)
 	{
+		// XXX(isabella): Be very careful with disabling the timeout. If requestAnimationFrame is called too
+		// deeply, then the entire requestAnimationFrame function will be broken globally across the entire
+		// window. The maximum depth that it can attain is the signed 32-bit integer maximum (2,147,483,647)
+		//
+		// https://github.com/mozilla-firefox/firefox/blob/5cc1a7909a4e4abb7db47926c88c2d173158e9d2/dom/base/RequestCallbackManager.h#L47-L50
 		if (timeout > -1 && Date.now > startTime + timeout)
 		{
 			return null;
