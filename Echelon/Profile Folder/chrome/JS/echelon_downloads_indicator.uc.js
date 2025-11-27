@@ -6,7 +6,7 @@
 // ==/UserScript==
 
 {
-    var { waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+    var { waitForElement } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.sys.mjs");
     waitForElement = waitForElement.bind(window);
 
     Object.defineProperty(DownloadsIndicatorView, "percentComplete", {

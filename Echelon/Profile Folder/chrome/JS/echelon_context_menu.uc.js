@@ -45,7 +45,7 @@ function ViewImage_viewMedia(e)
 }
 
 {
-    var { PrefUtils, waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+    var { PrefUtils, waitForElement } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.sys.mjs");
     waitForElement = waitForElement.bind(window);
 
     /* The bool pref which determines whether to use View Image. */

@@ -1,6 +1,6 @@
-var { PrefUtils, BrandUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+var { PrefUtils, BrandUtils } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.uc.js");
 let { PrivateBrowsingUtils } = ChromeUtils.importESModule("resource://gre/modules/PrivateBrowsingUtils.sys.mjs");
-Components.utils.import("resource:///modules/sessionstore/SessionStore.jsm", this);
+import { SessionStore } from "resource:///modules/sessionstore/SessionStore.sys.mjs", this);
 
 let root = document.documentElement;
 let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Homepage.Style");

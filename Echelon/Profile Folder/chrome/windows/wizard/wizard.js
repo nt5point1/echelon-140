@@ -1,5 +1,5 @@
 const { EchelonThemeManager } = ChromeUtils.importESModule("chrome://modules/content/EchelonThemeManager.sys.mjs");
-const { PrefUtils, VersionUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+const { PrefUtils, VersionUtils } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.sys.mjs");
 
 let currentPage = 1; // Default to the first page
 let pageStack = [];

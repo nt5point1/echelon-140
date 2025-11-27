@@ -110,7 +110,7 @@ let lang = Services.locale.requestedLocale;
         <button id="identity-popup-more-info-echelon" data-l10n-id="identity-more-info-link-text" oncommand="gIdentityHandler.handleMoreInfoClick(event);"></button>
     `;
 
-    var { waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+    var { waitForElement } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.sys.mjs");
     waitForElement = waitForElement.bind(this);
 
     waitForElement("#identity-popup-mainView").then(e => {

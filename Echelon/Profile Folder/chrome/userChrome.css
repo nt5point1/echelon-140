@@ -13,3 +13,56 @@
 
 /* Additional styles from the user ignored by Git. */
 @import url("_chrome_user.css");
+
+/* Taken from Firefox-Native-Titlebar */
+
+/* Make the titlebar buttons invisible except for fullscreen mode */
+#messengerWindow:not([sizemode="fullscreen"]) .titlebar-buttonbox,
+#main-window:not([sizemode="fullscreen"]) .titlebar-buttonbox {
+	min-width: 120px;
+}
+
+#messengerWindow:not([sizemode="fullscreen"]) .titlebar-button,
+#main-window:not([sizemode="fullscreen"]) .titlebar-button {
+    display: none;
+}
+
+/* To enable aero effects */
+#messengerWindow, #main-window, #navigator-toolbox {
+    background: transparent !important;
+}
+
+/* Maximized top overflow is fixed through CSS for now to keep the Windhawk mod source clean */
+#messengerWindow[sizemode="maximized"],
+#main-window[sizemode="maximized"] {
+    margin-top: 8px !important;
+}
+
+#messengerWindow[sizemode="maximized"] body,
+#main-window[sizemode="maximized"] body {
+    height: calc(100% - 8px) !important;
+}
+
+#messengerWindow[sizemode="normal"],
+#main-window[sizemode="normal"] {
+    margin-top: 1px;
+}
+
+#messengerWindow[sizemode="normal"] body,
+#main-window[sizemode="normal"] body {
+    height: calc(100% - 1px) !important;
+}
+
+/**
+    VERTICAL TABS
+**/
+
+/* To enable transparency on vertical tabs */
+.browser-toolbox-background, .browser-toolbox-background #sidebar-main {
+    background: transparent !important;
+}
+
+/* Remove top border that's here for some reason while using Vertical Tabs */
+#nav-bar {
+    border-top: 0.01px solid transparent !important;
+}

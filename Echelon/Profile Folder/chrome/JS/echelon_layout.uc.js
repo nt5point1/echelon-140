@@ -323,7 +323,7 @@ let g_echelonLayoutManager;
 					// add attribute for styling purposes
 					if (this.echelonURLBarElem) {
 						urlbar.setAttribute("echelon-modified", "true");
-						urlbar.querySelector("#urlbar-background").setAttribute("echelon-modified", "true");
+						urlbar.querySelector(".urlbar-background").setAttribute("echelon-modified", "true");
 					}
 				}
 			}
@@ -369,7 +369,7 @@ let g_echelonLayoutManager;
 		`);
 
 		waitForElement("#toolbar-context-echelonOptions").then(e => {
-			prefsItem.insertBefore(echelonTabsOnTopItem, e);
+			prefsItem.insertBefore(echelonTabsOnTopItem, e); // 372
 
 			let isTabsOnTop = PrefUtils.tryGetBoolPref("Echelon.Appearance.TabsOnTop");
 			let contextMenuItem = document.querySelector("#toolbar-context-echelonTabsOnTop");
@@ -389,7 +389,7 @@ let g_echelonLayoutManager;
 	});
 
 	waitForElement("#titlebar").then(e => {
-		waitForElement("#titlebar-content").then(e => {
+		waitForElement(".browser-titlebar").then(e => {
 			let echelonTitlebarButtonBox = window.MozXULElement.parseXULToFragment(`
 				<spacer id="titlebar-spacer" flex="1"/>
 				<hbox class="titlebar-buttonbox-container echelon-custom-buttonbox" skipintoolbarset="true">

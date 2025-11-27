@@ -1,4 +1,4 @@
-let { PrefUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+let { PrefUtils } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.sys.mjs");
 
 export class EchelonThemeManager
 {

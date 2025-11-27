@@ -6,7 +6,7 @@
 // ==/UserScript==
 
 const { SearchService } = ChromeUtils.importESModule("resource://gre/modules/SearchService.sys.mjs");
-const { SearchUtils } = ChromeUtils.importESModule("resource://gre/modules/SearchUtils.sys.mjs");
+const { SearchUtils } = ChromeUtils.importESModule("moz-src:///toolkit/components/search/SearchUtils.sys.mjs");
 
 class EchelonSearchManager
 {
@@ -138,7 +138,7 @@ class EchelonSearchManager
 
 	static async installSearchBoxHook()
 	{
-		let searchbar = await waitForElement("#searchbar");
+		let searchbar = await waitForElement("#urlbar");
 		this.searchbar = searchbar;
 		this.updateDisplay_orig = searchbar.updateDisplay;
 		searchbar.updateDisplay = this.updateDisplay_hook.bind(this);

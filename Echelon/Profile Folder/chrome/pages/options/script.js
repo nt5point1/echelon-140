@@ -1,4 +1,4 @@
-let { PrefUtils, VersionUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+let { PrefUtils, VersionUtils } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.sys.mjs");
 let { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
 
 let gOptionsBundle = document.getElementById("optionsBundle");

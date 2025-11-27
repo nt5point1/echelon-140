@@ -9,7 +9,7 @@ var g_echelonAustralisPanel;
 
 {
 
-var { PrefUtils, BrandUtils, renderElement, waitForElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+var { PrefUtils, BrandUtils, renderElement, waitForElement } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.sys.mjs");
 renderElement = renderElement.bind(window);
 waitForElement = waitForElement.bind(window);
 
@@ -17,7 +17,7 @@ ChromeUtils.defineESModuleGetters(window, {
     EchelonDragPositionManager: "chrome://userscripts/content/modules/EchelonDragPositionManager.sys.mjs",
     EchelonDebugTools: "chrome://userscripts/content/modules/EchelonDebugTools.sys.mjs",
     EchelonUpdateChecker: "chrome://userscripts/content/modules/EchelonUpdateChecker.sys.mjs",
-    DragPositionManager: "resource:///modules/DragPositionManager.sys.mjs"
+    DragPositionManager: "moz-src:///browser/components/customizableui/DragPositionManager.sys.mjs"
 });
 const Debug = EchelonDebugTools.getDebugController("AustralisPanel");
 const CMDebug = EchelonDebugTools.getDebugController("AustralisPanel.CustomizeMode");

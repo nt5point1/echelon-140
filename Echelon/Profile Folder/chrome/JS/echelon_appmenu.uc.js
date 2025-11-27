@@ -8,7 +8,7 @@
 let g_echelonFirefoxButton = null;
 
 {
-	var { PrefUtils, waitForElement, BrandUtils, renderElement } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+	var { PrefUtils, waitForElement, BrandUtils, renderElement } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.sys.mjs");
 	renderElement = renderElement.bind(window);
 	waitForElement = waitForElement.bind(window);
 
@@ -237,7 +237,7 @@ let g_echelonFirefoxButton = null;
 				//
 				// Button creation and insertion
 				//
-				waitForElement("#titlebar-content").then(e => {
+				waitForElement(".browser-titlebar").then(e => {
 					let browserName = BrandUtils.getBrandingKey("brandShortName");
 
 					this.appMenuButtonContainerEl = document.createXULElement("hbox");

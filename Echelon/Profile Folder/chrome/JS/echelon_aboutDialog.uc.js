@@ -6,7 +6,7 @@
 // ==/UserScript==
 
 {
-    var { PrefUtils, ThemeUtils } = ChromeUtils.import("chrome://userscripts/content/echelon_utils.uc.js");
+    var { PrefUtils, ThemeUtils } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.sys.mjs");
     
     ChromeUtils.defineESModuleGetters(window, {
         EchelonThemeManager: "chrome://modules/content/EchelonThemeManager.sys.mjs",
