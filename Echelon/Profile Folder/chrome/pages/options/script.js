@@ -1,5 +1,5 @@
 let { PrefUtils, VersionUtils } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.sys.mjs");
-let { ctypes } = ChromeUtils.import("resource://gre/modules/ctypes.jsm");
+let { ctypes } = ChromeUtils.importESModule("resource://gre/modules/ctypes.sys.mjs");
 
 let gOptionsBundle = document.getElementById("optionsBundle");
 let ncpQueryResult = window.matchMedia("(-moz-ev-native-controls-patch)");

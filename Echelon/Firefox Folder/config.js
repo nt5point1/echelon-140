@@ -15,7 +15,7 @@ try
     if (cmanifest.exists())
     {
         Cm.QueryInterface(Ci.nsIComponentRegistrar).autoRegister(cmanifest);
-        Cu.import("chrome://userchromejs/content/boot.jsm");
+        ChromeUtils.importESModule("chrome://userchromejs/content/boot.sys.mjs");
     }
 
     // Branding part 1: Registration of content

@@ -1,7 +1,6 @@
-var { PrefUtils, BrandUtils } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.uc.js");
+var { PrefUtils, BrandUtils } = ChromeUtils.importESModule("chrome://userscripts/content/echelon_utils.sys.mjs");
 let { PrivateBrowsingUtils } = ChromeUtils.importESModule("resource://gre/modules/PrivateBrowsingUtils.sys.mjs");
-import { SessionStore } from "resource:///modules/sessionstore/SessionStore.sys.mjs", this);
-
+let { SessionStore } = ChromeUtils.importESModule("resource:///modules/sessionstore/SessionStore.sys.mjs");
 let root = document.documentElement;
 let style = PrefUtils.tryGetIntPref("Echelon.Appearance.Homepage.Style");
 let newLogo = PrefUtils.tryGetBoolPref("Echelon.Appearance.NewLogo");
