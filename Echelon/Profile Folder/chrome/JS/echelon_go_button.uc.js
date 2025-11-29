@@ -16,7 +16,13 @@
             </toolbarbutton>
         `);
         e.insertBefore(goButton, e.querySelector("#stop-button"));
+		
+        let goButtonElement = e.querySelector("#go-button");
+		goButtonElement.addEventListener("click", (event) => {
+			gURLBar.handleCommand(event);
+		});
     });
+
 
     let urlbar = null;
 

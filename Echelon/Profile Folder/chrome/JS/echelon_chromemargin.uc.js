@@ -11,13 +11,8 @@ function chromeMargin() {
     let platform = AppConstants.platform;
     
     if (platform == "win" && hiddenTitlebar == true) {
-        if (style < ECHELON_LAYOUT_FF14)
-        {
-            window.windowUtils.setChromeMargin(0, 1, 1, 1);
-        }
-        else {
-            window.windowUtils.setChromeMargin(0, 2, 2, 2);
-        }
+        let margin = style < ECHELON_LAYOUT_FF14 ? "0,1,1,1" : "0,2,2,2";
+        document.documentElement.setAttribute("chromemargin", margin);
     }
 }
 

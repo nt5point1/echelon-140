@@ -276,7 +276,7 @@ class AustralisPanelController
                                 "exitLabel": str("appmenu_customize.exit_label"),
                                 "exitTooltiptext": str("appmenu_customize.exit_tooltip"),
                                 "closemenu": "none",
-                                "oncommand": "gCustomizeMode.toggle();"
+                                "oncommand": "gCustomizeMode.toggle;" // Removed from Firefox for whatever reason, so this will never work.
                             }),
                             elm("xul:toolbarseparator"),
                             elm("xul:toolbarbutton", {

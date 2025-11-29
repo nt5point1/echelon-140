@@ -44,12 +44,16 @@
     `).firstChild;
 
     waitForElement("#menu_ToolsPopup").then((menu) => {
+		let item = echelonPrefsItem.cloneNode();
         echelonPrefsItem.id = "menu_echelonOptions";
+		item.addEventListener("command", launchEchelonOptions);
         menu.append(echelonPrefsItem.cloneNode());
         menu.addEventListener("popupshowing", onPopupShowing);
     });
     waitForElement("#toolbar-context-menu").then((menu) => {
+		let item = echelonPrefsItem.cloneNode();
         echelonPrefsItem.id = "toolbar-context-echelonOptions";
+		item.addEventListener("command", launchEchelonOptions);
         menu.insertBefore(echelonPrefsItem.cloneNode(), document.querySelector(".viewCustomizeToolbar"));
         menu.addEventListener("popupshowing", onPopupShowing);
     });

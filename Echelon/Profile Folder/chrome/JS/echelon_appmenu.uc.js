@@ -12,11 +12,10 @@ let g_echelonFirefoxButton = null;
 	renderElement = renderElement.bind(window);
 	waitForElement = waitForElement.bind(window);
 
-	function setAttributes(element, attributes)
-	{
-		Object.keys(attributes).forEach(attr => {
-			element.setAttribute(attr, attributes[attr]);
-		});
+	function setAttributes(el, props) {
+	  for (let [name, value] of Object.entries(props)) {
+		el.setAttribute(name, value);
+	  }
 	}
 
 	/**
@@ -237,7 +236,7 @@ let g_echelonFirefoxButton = null;
 				//
 				// Button creation and insertion
 				//
-				waitForElement(".browser-titlebar").then(e => {
+				waitForElement("#titlebar-content").then(e => {
 					let browserName = BrandUtils.getBrandingKey("brandShortName");
 
 					this.appMenuButtonContainerEl = document.createXULElement("hbox");
@@ -756,12 +755,34 @@ let g_echelonFirefoxButton = null;
 				])
 			]);
 			
+			
 			this.menuEl.appendChild(elementSet);
 			parent.appendChild(this.menuEl);
 
 			this.updateStrings();
 			this.menuEl.addEventListener("popupshowing", this.updateStrings.bind(this));
 			this.initialized = true;
+			
+			const menuHandlers = {
+				appmenu_preferences: () => openPreferences(),
+				appmenu_echelonOptions: () => launchEchelonOptions(),
+				appmenu_toggleTabsOnTop: () => {
+					const el = document.getElementById("appmenu_toggleTabsOnTop");
+					g_echelonLayoutManager.setTabsOnTop(Boolean(el.getAttribute("checked")));
+				},
+				appmenu_toolbarLayout: () => goDoCommand("cmd_CustomizeToolbars"),
+				appmenu_openHelp: () => openHelpLink("firefox-help"),
+				appmenu_gettingStarted: () => gBrowser.addTab("http://www.mozilla.com/firefox/central/", {triggeringPrincipal: Services.scriptSecurityManager.getSystemPrincipal(), inBackground: false}),
+				appmenu_troubleshootingInfo: () => openTroubleshootingPage(),
+				appmenu_feedbackPage: () => openFeedbackPage(),
+				appmenu_safeMode: () => safeModeRestart(),
+				appmenu_about: () => openAboutDialog()
+			};
+
+			for (const [id, handler] of Object.entries(menuHandlers)) {
+				const el = document.getElementById(id);
+				if (el) el.addEventListener("command", handler);
+			}
 		}
 
 		updateStrings()

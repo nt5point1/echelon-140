@@ -172,6 +172,10 @@ let g_echelonLayoutManager;
 				}
 			}
 
+			// Since Mozilla is a bunch of idiots.
+			let spacer = document.getElementById("vertical-spacer");
+			if (spacer) spacer.remove();
+
 			// Update back/forward button
 			let backButtonel = document.querySelector("#back-button");
 			let forwardButtonEl;
@@ -389,7 +393,7 @@ let g_echelonLayoutManager;
 	});
 
 	waitForElement("#titlebar").then(e => {
-		waitForElement(".browser-titlebar").then(e => {
+		waitForElement("#titlebar-content").then(e => {
 			let echelonTitlebarButtonBox = window.MozXULElement.parseXULToFragment(`
 				<spacer id="titlebar-spacer" flex="1"/>
 				<hbox class="titlebar-buttonbox-container echelon-custom-buttonbox" skipintoolbarset="true">
