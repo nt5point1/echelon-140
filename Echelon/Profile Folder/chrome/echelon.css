@@ -1885,6 +1885,9 @@ window {
   border-bottom-left-radius: 4px !important;
   border-bottom-right-radius: 4px !important;
 }
+:root[sizemode="maximized"] #appmenu-button-container {
+    padding-top: 8px !important;
+}
 
 @media not (-moz-windows-compositor) {
   :root:not([echelon-system-style=winxp]) #appmenu-button-container {
@@ -1936,6 +1939,11 @@ window {
   list-style-image: none !important;
   content: url("chrome://echelon/content/firefox-4/appmenu/appmenu-dropmarker.png") !important;
   margin-inline-start: 0.5em !important;
+}
+
+.button-menu-dropmarker {
+	appearance: none;
+	fill: currentColor;
 }
 
 #appmenu-button-container[open=true],
