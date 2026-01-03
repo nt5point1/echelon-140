@@ -5506,10 +5506,11 @@ xul|dialog[inbrowserwindow] {
     appearance: auto !important;
     -moz-default-appearance: -moz-window-titlebar !important;
   }
+} /* No menu bar hidden hsit shirp ror whatetver Tired as fuck   kkkkkkkk */
+:root[echelon-style-6][tabsintitlebar][sizemode="normal"] #toolbar-menubar ~ #TabsToolbar .toolbar-items, :root[echelon-style-6][tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide=true][inactive] ~ #TabsToolbar .toolbar-items {
+    margin-top: 15px !important;
 }
-:root[echelon-style-6][tabsintitlebar][sizemode=normal][chromehidden~=menubar] #toolbar-menubar ~ #TabsToolbar .toolbar-items, :root[echelon-style-6][tabsintitlebar][sizemode=normal] #toolbar-menubar[autohide=true][inactive] ~ #TabsToolbar .toolbar-items {
-  margin-top: 15px !important;
-}
+
 :root[echelon-style-6] .private-browsing-indicator {
   pointer-events: none !important;
   display: none !important;

@@ -8,7 +8,7 @@ ___
 
 This is a fork made to support latest versions of Firefox, to keep the theme working as intended, while no new features are gonna be added.
 
-As there was a change in Content Security Policy since 128 ESR (and I am not willing to fully rewrite scripts *for now*), temporarily set security.browser_xhtml_csp.enabled to false (e.g to restore going to Echelon Options from right click on tab bar). Please be advised, that this is **not** an option you should keep off on regular basis, so after you're done, enable it back.
+No clue what exactly broke, but [this](https://github.com/e3kskoy7wqk/Firefox-for-windows-7/releases/tag/144.0) version doesn't crash the browser unlike newer ones.
 
 Original description down below:
 ___
