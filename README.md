@@ -10,8 +10,6 @@ This is a fork made to support latest versions of Firefox, to keep the theme wor
 
 No clue what exactly broke, but [this](https://github.com/e3kskoy7wqk/Firefox-for-windows-7/releases/tag/144.0) version doesn't crash the browser unlike newer ones.
 
-Disabled "Tabs On Top" should be the only broken thing from my testing, which I'll get my hands to later.
-
 Original description down below:
 ___
 

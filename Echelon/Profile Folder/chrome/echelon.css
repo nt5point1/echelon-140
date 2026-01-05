@@ -1885,9 +1885,6 @@ window {
   border-bottom-left-radius: 4px !important;
   border-bottom-right-radius: 4px !important;
 }
-:root[sizemode="maximized"] #appmenu-button-container {
-    padding-top: 8px !important;
-}
 
 @media not (-moz-windows-compositor) {
   :root:not([echelon-system-style=winxp]) #appmenu-button-container {
@@ -7617,3 +7614,29 @@ xul|dialog[inbrowserwindow] {
 /* ::::: Echelon Branding ::::: */
 
 /*# sourceMappingURL=echelon.css.map */
+
+/* Bum hack */
+@media not (-moz-platform: windows-win10) {
+  :root[tabsintitlebar][sizemode="normal"] #titlebar {
+    appearance: auto;
+    -moz-default-appearance: -moz-window-titlebar;
+  }
+
+  :root[tabsintitlebar][sizemode="maximized"] #titlebar {
+    appearance: auto;
+    -moz-default-appearance: -moz-window-titlebar-maximized;
+  }
+}
+
+:root[tabsintitlebar][sizemode="normal"] .browser-titlebar {
+  appearance: none !important;
+  -moz-default-appearance: -moz-window-titlebar;
+}
+
+:root[tabsintitlebar][sizemode="maximized"] .browser-titlebar {
+  appearance: none !important;
+  -moz-default-appearance: -moz-window-titlebar-maximized;
+}
+:root[tabsintitlebar]:not([lwtheme]) {
+  color: CaptionText !important;
+}

@@ -764,6 +764,10 @@ let g_echelonFirefoxButton = null;
 			this.initialized = true;
 			
 			const menuHandlers = {
+				appmenu_bookmarks: () => PlacesCommandHook.showPlacesOrganizer("AllBookmarks"),
+				appmenu_history: () => PlacesCommandHook.showPlacesOrganizer("History"),
+				appmenu_fullScreen: () => BrowserCommands.fullScreen(),
+				appmenu_customize: () => openPreferences(),
 				appmenu_preferences: () => openPreferences(),
 				appmenu_echelonOptions: () => launchEchelonOptions(),
 				appmenu_toggleTabsOnTop: () => {
@@ -771,6 +775,7 @@ let g_echelonFirefoxButton = null;
 					g_echelonLayoutManager.setTabsOnTop(Boolean(el.getAttribute("checked")));
 				},
 				appmenu_toolbarLayout: () => goDoCommand("cmd_CustomizeToolbars"),
+				appmenu_help: () => openHelpLink("firefox-help"),
 				appmenu_openHelp: () => openHelpLink("firefox-help"),
 				appmenu_gettingStarted: () => gBrowser.addTab("http://www.mozilla.com/firefox/central/", {triggeringPrincipal: Services.scriptSecurityManager.getSystemPrincipal(), inBackground: false}),
 				appmenu_troubleshootingInfo: () => openTroubleshootingPage(),
@@ -781,7 +786,13 @@ let g_echelonFirefoxButton = null;
 
 			for (const [id, handler] of Object.entries(menuHandlers)) {
 				const el = document.getElementById(id);
-				if (el) el.addEventListener("command", handler);
+				if (el) {
+					if (el.localName === "hbox") {
+						el.addEventListener("click", handler);
+					} else {
+						el.addEventListener("command", handler);
+					}
+				}
 			}
 		}
 

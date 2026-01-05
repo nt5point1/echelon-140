@@ -379,6 +379,9 @@ let g_echelonLayoutManager;
 			let contextMenuItem = document.querySelector("#toolbar-context-echelonTabsOnTop");
 			if (contextMenuItem)
 			{
+					contextMenuItem.addEventListener("command", function() {
+					g_echelonLayoutManager.setTabsOnTop(Boolean(this.getAttribute("checked")));
+				});
 				if (isTabsOnTop == true)
 				{
 					contextMenuItem.setAttribute("checked", "true");
