@@ -7640,3 +7640,41 @@ xul|dialog[inbrowserwindow] {
 :root[tabsintitlebar]:not([lwtheme]) {
   color: CaptionText !important;
 }
+/* restore audio icon idk */
+.tab-audio-button {
+  display: none !important;
+}
+
+.tabbrowser-tab:is([soundplaying], [muted], [activemedia-blocked]) {
+  --tab-icon-end-margin: 5.5px !important;
+}
+
+.tab-icon-overlay {
+  &:is([soundplaying], [muted], [activemedia-blocked]) {
+    display: revert !important;
+  }
+}
+
+.tab-icon-overlay:not([crashed]) {
+  &:is([soundplaying], [muted], [activemedia-blocked]) {
+    top: 0px !important;
+    inset-inline-end: 0px !important;
+  }
+
+  &:is([soundplaying], [muted], [activemedia-blocked]):hover {
+    background-color: var(--tab-icon-overlay-stroke, light-dark(white, black));
+  }
+  
+  &[soundplaying] {
+    list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing-small.svg") !important;
+  }
+
+  &[muted] {
+    list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-muted-small.svg") !important;
+  }
+
+  &[activemedia-blocked] {
+    list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-blocked-small.svg") !important;
+  }
+}
+
