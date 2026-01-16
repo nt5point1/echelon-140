@@ -298,12 +298,12 @@ let g_echelonLayoutManager;
 		 * With similar unified styling as the actual URLBar and get the width
 		 * of the element and set it to the real URLBar element.
 		 */
-		initURLBarWidth()
+		async initURLBarWidth()
 		{
-			let toolbar = gURLBar.textbox.closest("toolbar");
+			let urlbar = await waitForElement("#urlbar");
+			let toolbar = urlbar.closest("toolbar");
 
 			if (toolbar) {
-				let urlbar = gURLBar.textbox;
 				let urlbarContainer = urlbar.parentElement;
 
 				// Check if URLBar isn't a XUL element
@@ -315,7 +315,7 @@ let g_echelonLayoutManager;
 					urlbarContainer.insertBefore(this.echelonURLBarElem, urlbarContainer.lastChild);
 
 					let echelonURLBarObserver = new ResizeObserver(([entry]) => {
-						gURLBar.textbox.style.setProperty(
+						urlbar.style.setProperty(
 							"--urlbar-echelon-width",
 							(entry.borderBoxSize[0].inlineSize) + "px"
 						);
