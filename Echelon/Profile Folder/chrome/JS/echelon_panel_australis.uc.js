@@ -17,12 +17,27 @@ ChromeUtils.defineESModuleGetters(window, {
     EchelonDragPositionManager: "chrome://userscripts/content/modules/EchelonDragPositionManager.sys.mjs",
     EchelonDebugTools: "chrome://userscripts/content/modules/EchelonDebugTools.sys.mjs",
     EchelonUpdateChecker: "chrome://userscripts/content/modules/EchelonUpdateChecker.sys.mjs",
-    DragPositionManager: "moz-src:///browser/components/customizableui/DragPositionManager.sys.mjs"
 });
+
+let DragPositionManager;
+
+try {
+    // ~ ff144+
+    ({ DragPositionManager } = ChromeUtils.importESModule(
+        "moz-src:///browser/components/customizableui/DragPositionManager.sys.mjs"
+    ));
+} catch {
+    // esr 140 and below
+    ({ DragPositionManager } = ChromeUtils.importESModule(
+        "resource:///modules/DragPositionManager.sys.mjs"
+    ));
+}
+
+window.DragPositionManager = DragPositionManager;
+const OriginalDragPositionManager = DragPositionManager;
+
 const Debug = EchelonDebugTools.getDebugController("AustralisPanel");
 const CMDebug = EchelonDebugTools.getDebugController("AustralisPanel.CustomizeMode");
-
-const OriginalDragPositionManager = window.DragPositionManager;
 
 let strings = Services.strings.createBundle("chrome://echelon/locale/properties/australis-panel.properties");
 

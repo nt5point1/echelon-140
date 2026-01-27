@@ -1339,11 +1339,13 @@ window {
   padding-block: 0 !important;
   margin-inline-end: 0 !important;
 }
-#urlbar-container:hover .urlbar-background {
+#urlbar-container:hover .urlbar-background,
+#urlbar-container:hover #urlbar-background {
   background-color: var(--urlbar-background-color-hover) !important;
   border-color: var(--urlbar-border-color-hover) !important;
 }
-#urlbar-container[focused=true] .urlbar-background {
+#urlbar-container[focused=true] .urlbar-background,
+#urlbar-container[focused=true] #urlbar-background {
   background-color: var(--urlbar-background-color-focused) !important;
   border-color: var(--urlbar-border-color-focused) !important;
 }
@@ -1367,6 +1369,7 @@ window {
 }
 
 .urlbar-background,
+#urlbar-background,
 #searchbar {
   height: var(--urlbar-min-height) !important;
   padding: 2px !important;
@@ -1384,7 +1387,7 @@ window {
 :root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button {
   margin-inline-end: 0 !important;
 }
-:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button .urlbar-background {
+:root:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button .urlbar-background, #urlbar-container.unified-refresh-button #urlbar-background {
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border-inline-end: 0 !important;
@@ -4649,7 +4652,7 @@ xul|dialog[inbrowserwindow] {
 :root[echelon-style-4] #urlbar {
   pointer-events: all !important;
 }
-:root[echelon-style-4] .urlbar-background, :root[echelon-style-4] #searchbar {
+:root[echelon-style-4] .urlbar-background, #urlbar-background, :root[echelon-style-4] #searchbar {
   border-radius: 2.5px !important;
 }
 :root[echelon-style-4] #urlbar .urlbar-history-dropmarker {
@@ -4728,6 +4731,7 @@ xul|dialog[inbrowserwindow] {
   margin-left: -27px !important;
 }
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-background,
+:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container,
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-input-container {
   clip-path: var(--urlbar-back-button-clip-path) !important;
@@ -4740,6 +4744,7 @@ xul|dialog[inbrowserwindow] {
   margin-inline-start: -27px !important;
 }
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container .urlbar-background,
+:root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container #urlbar-background,
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container .urlbar-input-container,
 :root[echelon-style-4]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar + #urlbar-container #urlbar-input-container {
   border-top-left-radius: 0 !important;
@@ -5970,7 +5975,9 @@ xul|dialog[inbrowserwindow] {
   left: 31px !important;
 }
 :root[echelon-style-6][echelon-system-style=win8] .urlbar-background,
+:root[echelon-style-6][echelon-system-style=win8] #urlbar-background,
 :root[echelon-style-6][echelon-system-style=win8] #searchbar, :root[echelon-style-6][echelon-system-style=win10] .urlbar-background,
+:root[echelon-style-6][echelon-system-style=win8] #searchbar, :root[echelon-style-6][echelon-system-style=win10] #urlbar-background,
 :root[echelon-style-6][echelon-system-style=win10] #searchbar {
   border-radius: 0 !important;
 }
@@ -7262,6 +7269,7 @@ xul|dialog[inbrowserwindow] {
   box-shadow: 0 0 0 1px var(--urlbar-border-color-focused) inset !important;
 }
 :root[echelon-style-7][echelon-style-6][echelon-system-style=win10] .urlbar-background,
+:root[echelon-style-7][echelon-style-6][echelon-system-style=win10] #urlbar-background,
 :root[echelon-style-7][echelon-style-6][echelon-system-style=win10] #searchbar {
   transition-property: border-color, box-shadow !important;
   transition-duration: 0.1s !important;
@@ -7278,6 +7286,7 @@ xul|dialog[inbrowserwindow] {
   margin-left: -35px !important;
 }
 :root[echelon-style-7][echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-background,
+:root[echelon-style-7][echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
 :root[echelon-style-7][echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container,
 :root[echelon-style-7][echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-input-container {
   clip-path: var(--urlbar-back-button-clip-path-win10) !important;
@@ -7294,7 +7303,8 @@ xul|dialog[inbrowserwindow] {
   transition-duration: 0.1s !important;
   box-shadow: inset -1px 0 0 var(--urlbar-border-color-focused), inset 0 1px 0 var(--urlbar-border-color-focused), inset 0 -1px 0 var(--urlbar-border-color-focused) !important;
 }
-:root[echelon-style-7][echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] .urlbar-background {
+:root[echelon-style-7][echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] .urlbar-background,
+:root[echelon-style-7][echelon-style-6][echelon-system-style=win10]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] #urlbar-background {
   box-shadow: inset 0 1px 0 var(--urlbar-border-color-focused), inset 0 1px 0 var(--urlbar-border-color-focused), inset 0 -1px 0 var(--urlbar-border-color-focused) !important;
 }
 :root[echelon-style-7][echelon-style-6][compact-theme][default-light-theme], :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode][default-light-theme] {
@@ -7556,8 +7566,10 @@ xul|dialog[inbrowserwindow] {
   margin-left: -27px !important;
 }
 :root[echelon-style-7][echelon-style-6][compact-theme]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-background,
+:root[echelon-style-7][echelon-style-6][compact-theme]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
 :root[echelon-style-7][echelon-style-6][compact-theme]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container,
 :root[echelon-style-7][echelon-style-6][compact-theme]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-input-container, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-background,
+:root[echelon-style-7][echelon-style-6][compact-theme]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-input-container, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-background,
 :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container .urlbar-input-container,
 :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode]:not([chromehidden~=toolbar], [customizing]) #nav-bar #forward-button.unified-with-urlbar:not(:hover)[disabled] + #urlbar-container #urlbar-input-container {
   mask: unset !important;
@@ -7571,8 +7583,10 @@ xul|dialog[inbrowserwindow] {
 }
 :root[echelon-style-7][echelon-style-6][compact-theme] #searchbar,
 :root[echelon-style-7][echelon-style-6][compact-theme] .urlbar-background,
+:root[echelon-style-7][echelon-style-6][compact-theme] #urlbar-background,
 :root[echelon-style-7][echelon-style-6][compact-theme] #stop-reload-button, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #searchbar,
 :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] .urlbar-background,
+:root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #urlbar-background,
 :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #stop-reload-button {
   color: inherit !important;
   background-color: var(--url-and-searchbar-background-color) !important;
@@ -7580,14 +7594,17 @@ xul|dialog[inbrowserwindow] {
   border-color: var(--chrome-nav-bar-controls-border-color) !important;
   box-shadow: none !important;
 }
-:root[echelon-style-7][echelon-style-6][compact-theme] #urlbar-container .urlbar-background, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #urlbar-container .urlbar-background {
+:root[echelon-style-7][echelon-style-6][compact-theme] #urlbar-container .urlbar-background, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #urlbar-container .urlbar-background,
+:root[echelon-style-7][echelon-style-6][compact-theme] #urlbar-container #urlbar-background, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #urlbar-container #urlbar-background {
   border-inline-start-style: none !important;
 }
-:root[echelon-style-7][echelon-style-6][compact-theme] #urlbar-container:hover .urlbar-background, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #urlbar-container:hover .urlbar-background {
+:root[echelon-style-7][echelon-style-6][compact-theme] #urlbar-container:hover .urlbar-background, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #urlbar-container:hover .urlbar-background,
+:root[echelon-style-7][echelon-style-6][compact-theme] #urlbar-container:hover #urlbar-background, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #urlbar-container:hover #urlbar-background {
   background-color: var(--url-and-searchbar-background-color) !important;
   border-color: var(--chrome-nav-bar-controls-border-color) !important;
 }
-:root[echelon-style-7][echelon-style-6][compact-theme] #urlbar-container[focused=true] .urlbar-background, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #urlbar-container[focused=true] .urlbar-background {
+:root[echelon-style-7][echelon-style-6][compact-theme] #urlbar-container[focused=true] .urlbar-background, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #urlbar-container[focused=true] .urlbar-background,
+:root[echelon-style-7][echelon-style-6][compact-theme] #urlbar-container[focused=true] #urlbar-background, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode] #urlbar-container[focused=true] #urlbar-background {
   box-shadow: none !important;
   background-color: var(--url-and-searchbar-background-color) !important;
   border-color: var(--chrome-nav-bar-controls-border-color) !important;
@@ -7601,7 +7618,8 @@ xul|dialog[inbrowserwindow] {
   background-color: var(--url-and-searchbar-background-color) !important;
   border-color: var(--chrome-nav-bar-controls-border-color) !important;
 }
-:root[echelon-style-7][echelon-style-6][compact-theme]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] .urlbar-background, :root[echelon-style-7][echelon-style-6][compact-theme]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] + #stop-reload-button, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] .urlbar-background, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] + #stop-reload-button {
+:root[echelon-style-7][echelon-style-6][compact-theme]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] .urlbar-background, :root[echelon-style-7][echelon-style-6][compact-theme]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] + #stop-reload-button, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] .urlbar-background, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] + #stop-reload-button,
+:root[echelon-style-7][echelon-style-6][compact-theme]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] #urlbar-background, :root[echelon-style-7][echelon-style-6][compact-theme]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] + #stop-reload-button, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] #urlbar-background, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode]:not([chromehidden~=toolbar]) #urlbar-container.unified-refresh-button[focused=true] + #stop-reload-button {
   box-shadow: none !important;
 }
 :root[echelon-style-7][echelon-style-6][compact-theme]:not([lwtheme-brighttext]) #back-button, :root[echelon-style-7][echelon-style-6][lwt-default-theme-in-dark-mode]:not([lwtheme-brighttext]) #back-button {
@@ -7677,4 +7695,7 @@ xul|dialog[inbrowserwindow] {
     list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-blocked-small.svg") !important;
   }
 }
-
+/* Fogn't */
+#TabsToolbar::before {
+	background: var(--content-border-top-image) bottom !important;
+}
