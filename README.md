@@ -8,7 +8,7 @@ ___
 
 This is a fork made to support latest versions of Firefox, to keep the theme working as intended, while no new features are gonna be added.
 
-No clue what exactly broke, but [this](https://github.com/e3kskoy7wqk/Firefox-for-windows-7/releases/tag/144.0) version doesn't crash the browser unlike newer ones.
+Though, for the intended experience, consider using [Nocturne](https://github.com/raytek-cafe/Nocturne).
 
 Original description down below:
 ___
