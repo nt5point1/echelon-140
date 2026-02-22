@@ -12,4 +12,23 @@
 @import url("echelon.css");
 
 /* Additional styles from the user ignored by Git. */
-@import url("firefoxNativeTitlebar.css");
+@media (-moz-platform: linux) {
+
+    :root[echelon-style-6][sizemode="normal"]
+    #toolbar-menubar ~ #TabsToolbar .toolbar-items {
+    margin-top: 15px !important;
+    }
+
+    :root:not([echelon-style-6]):not([tabsintitlebar="true"]) #appmenu-button-container {
+        margin-block-start: 0 !important;
+    }
+
+    :root:not([echelon-style-6]):not([tabsintitlebar="true"]) #appmenu-button-container {
+        visibility: visible !important;
+    }
+
+    :root:not([echelon-system-style="winxp"]):not([lwtheme])[sizemode="normal"] #appmenu-button-container {
+        margin-block-start: 0 !important;
+    }
+
+}
