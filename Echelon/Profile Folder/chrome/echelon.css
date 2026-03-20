@@ -7699,3 +7699,7 @@ xul|dialog[inbrowserwindow] {
 #TabsToolbar::before {
 	background: var(--content-border-top-image) bottom !important;
 }
+/* duct tape fix for caption button mask appearing on bookmarks panel pre 29 */
+:root:not([echelon-style-6]):not([echelon-style-7])[sizemode="maximized"] .titlebar-buttonbox {
+  display: none !important;
+}
