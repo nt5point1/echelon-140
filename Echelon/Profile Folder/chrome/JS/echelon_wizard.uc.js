@@ -63,185 +63,55 @@ function hideEchelonWizard() {
 
 // set default echelon settings
 function setDefaultSettings() {
-    let defaultEchelonConfig = {
-        0: {
-            "name": "Echelon.Appearance.Blue",
-            "type": "bool",
-            "value": true
-        },
-        1: {
-            "name": "Echelon.Appearance.Preset",
-            "type": "int",
-            "value": "0"
-        },
-        2: {
-            "name": "Echelon.Appearance.Style",
-            "type": "int",
-            "value": "0"
-        },
-        3: {
-            "name": "Echelon.Appearance.systemStyle",
-            "type": "string",
-            "value": ""
-        },
-        4: {
-            "name": "Echelon.Appearance.Homepage.Style",
-            "type": "int",
-            "value": "0"
-        },
-        5: {
-            "name": "Echelon.Appearance.overrideHomepagePreset",
-            "type": "bool",
-            "value": false
-        },
-        6: {
-            "name": "Echelon.Homepage.HideCustomSnippets",
-            "type": "bool",
-            "value": false
-        },
-        7: {
-            "name": "Echelon.Option.HideUnifiedExtensions",
-            "type": "bool",
-            "value": false
-        },
-        8: {
-            "name": "Echelon.Option.Branding",
-            "type": "string",
-            "value": "firefox"
-        },
-        9: {
-            "name": "Echelon.Appearance.TabsOnTop",
-            "type": "bool",
-            "value": true
-        },
-        10: {
-            "name": "Echelon.Appearance.disableChrome",
-            "type": "bool",
-            "value": true
-        },
+    let defaultEchelonConfig = [
+        ["Echelon.Appearance.Blue", "bool", true],
+        ["Echelon.Appearance.Preset", "int", "0"],
+        ["Echelon.Appearance.Style", "int", "0"],
+        ["Echelon.Appearance.systemStyle", "string", ""],
+        ["Echelon.Appearance.Homepage.Style", "int", "0"],
+        ["Echelon.Appearance.overrideHomepagePreset", "bool", false],
+        ["Echelon.Appearance.TabsOnTop", "bool", true],
+        ["Echelon.Appearance.disableChrome", "bool", true],
+        ["Echelon.Homepage.HideCustomSnippets", "bool", false],
+        ["Echelon.Option.HideUnifiedExtensions", "bool", false],
+        ["Echelon.Option.Branding", "string", "firefox"],
 
-        // general browser tweaks
-        11: {
-            "name": "ui.systemUsesDarkMode",
-            "type": "int",
-            "value": "0"
-        },
-        12: {
-            "name": "browser.theme.dark-private-windows",
-            "type": "bool",
-            "value": false
-        },
-        13: {
-            "name": "toolkit.legacyUserProfileCustomizations.stylesheets",
-            "type": "bool",
-            "value": true
-        },
-        14: {
-            "name": "browser.theme.dark-private-windows",
-            "type": "bool",
-            "value": false
-        },
-        15: {
-            "name": "browser.privateWindowSeparation.enabled",
-            "type": "bool",
-            "value": false
-        },
-        16: {
-            "name": "browser.display.windows.non_native_menus",
-            "type": "int",
-            "value": "0"
-        },
-        17: {
-            "name": "widget.non-native-theme.enabled",
-            "type": "bool",
-            "value": false
-        },
-        18: {
-            "name": "browser.tabs.hoverPreview.enabled",
-            "type": "bool",
-            "value": false
-        },
-        19: {
-            "name": "browser.tabs.tabmanager.enabled",
-            "type": "bool",
-            "value": false
-        },
-        20: {
-            "name": "browser.menu.showViewImageInfo",
-            "type": "bool",
-            "value": true
-        },
-        21: {
-            "name": "browser.newtab.preload",
-            "type": "bool",
-            "value": false
-        },
+        // General Browser Tweaks
+        ["ui.systemUsesDarkMode", "int", "0"],
+        ["browser.theme.dark-private-windows", "bool", false],
+        ["toolkit.legacyUserProfileCustomizations.stylesheets", "bool", true],
+        ["browser.privateWindowSeparation.enabled", "bool", false],
+        ["browser.display.windows.non_native_menus", "int", "0"],
+        ["widget.non-native-theme.enabled", "bool", false],
+        ["browser.tabs.hoverPreview.enabled", "bool", false],
+        ["browser.tabs.tabmanager.enabled", "bool", false],
+        ["browser.menu.showViewImageInfo", "bool", true],
+        ["browser.newtab.preload", "bool", false],
 
         // r3dfox exclusives
-        22: {
-            "name": "r3dfox.caption.text.color",
-            "type": "bool",
-            "value": false,
-            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
-        },
-        23: {
-            "name": "r3dfox.colors.enabled",
-            "type": "bool",
-            "value": false,
-            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
-        },
-        24: {
-            "name": "r3dfox.customizations.enabled",
-            "type": "bool",
-            "value": false,
-            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
-        },
-        25: {
-            "name": "r3dfox.force.transparency",
-            "type": "bool",
-            "value": false,
-            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
-        },
-        26: {
-            "name": "r3dfox.transparent.menubar",
-            "type": "bool",
-            "value": false,
-            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
-        },
-        27: {
-            "name": "r3dfox.translucent.navbar",
-            "type": "bool",
-            "value": false,
-            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
-        },
-        28: {
-            "name": "r3dfox.aero.fog",
-            "type": "bool",
-            "value": false,
-            "exclusive": ["r3dfox", "r3dfox_esr", "plasmafox"]
-        }
-    }
+        ["r3dfox.caption.text.color", "bool", false, ["r3dfox", "r3dfox_esr", "plasmafox"]],
+        ["r3dfox.colors.enabled", "bool", false, ["r3dfox", "r3dfox_esr", "plasmafox"]],
+        ["r3dfox.customizations.enabled", "bool", false, ["r3dfox", "r3dfox_esr", "plasmafox"]],
+        ["r3dfox.force.transparency", "bool", false, ["r3dfox", "r3dfox_esr", "plasmafox"]],
+        ["r3dfox.transparent.menubar", "bool", false, ["r3dfox", "r3dfox_esr", "plasmafox"]],
+        ["r3dfox.translucent.navbar", "bool", false, ["r3dfox", "r3dfox_esr", "plasmafox"]],
+        ["r3dfox.aero.fog", "bool", false, ["r3dfox", "r3dfox_esr", "plasmafox"]],
 
-    for (const config of Object.keys(defaultEchelonConfig)) {
-        if (defaultEchelonConfig[config].name) {
-            if (defaultEchelonConfig[config].type == "bool") {
-                PrefUtils.trySetBoolPref(defaultEchelonConfig[config].name, defaultEchelonConfig[config].value);
-            } else
-            if (defaultEchelonConfig[config].type == "int") {
-                PrefUtils.trySetIntPref(defaultEchelonConfig[config].name, defaultEchelonConfig[config].value);
-            } else
-            if (defaultEchelonConfig[config].type == "string") {
-                PrefUtils.trySetStringPref(defaultEchelonConfig[config].name, defaultEchelonConfig[config].value);
-            }
-        }
+        // nocturne exclusives
+        ["nocturne.colors", "int", "0", ["nocturne"]],
+        ["nocturne.backgrounds.enabled", "bool", false, ["nocturne"]],
+        ["nocturne.transparent.menubar", "bool", false, ["nocturne"]],
+        ["nocturne.translucent.navbar", "bool", false, ["nocturne"]],
+        ["nocturne.aero.fog", "int", "0", ["nocturne"]]
+    ];
 
-        if (Array.isArray(defaultEchelonConfig[config].exclusive)) {
-            for (const browser of defaultEchelonConfig[config].exclusive) {
-                if (AppConstants.MOZ_APP_NAME == browser) {
-                    PrefUtils.trySetBoolPref(defaultEchelonConfig[config].name, defaultEchelonConfig[config].value);
-                }
-            }
-        }
+    for (const [name, type, value, exclusive] of defaultEchelonConfig) {
+        // Skip if this is an exclusive setting and doesn't match current build
+        if (exclusive && !exclusive.includes(AppConstants.MOZ_APP_NAME)) continue;
+
+        if (type == "bool") PrefUtils.trySetBoolPref(name, value);
+        else if (type == "int") PrefUtils.trySetIntPref(name, value);
+        else if (type == "string") PrefUtils.trySetStringPref(name, value);
     }
 }
 
