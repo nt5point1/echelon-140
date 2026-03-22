@@ -102,6 +102,8 @@ function setDefaultSettings() {
         ["nocturne.backgrounds.enabled", "bool", false, ["nocturne"]],
         ["nocturne.transparent.menubar", "bool", false, ["nocturne"]],
         ["nocturne.translucent.navbar", "bool", false, ["nocturne"]],
+        ["nocturne.ui.ff68downloadicons", "bool", false, ["nocturne"]],
+        ["nocturne.ui.oldurlbar", "bool", false, ["nocturne"]],
         ["nocturne.aero.fog", "int", "0", ["nocturne"]]
     ];
 
