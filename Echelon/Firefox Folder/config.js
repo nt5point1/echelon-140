@@ -47,7 +47,3 @@ defaultPref("general.smoothScroll.stopDecelerationWeighting", ".4");
 
 // Enable CSS
 defaultPref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-
-// Remove Nocturne things
-defaultPref("nocturne.backgrounds.enabled", false);
-defaultPref("nocturne.ui.oldurlbar", false);
