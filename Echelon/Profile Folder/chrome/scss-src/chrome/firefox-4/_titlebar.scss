@@ -29,10 +29,10 @@
 	}
 
 	// maximized behavior
-	&[tabsintitlebar="true"]:not([sizemode="maximized"]) #toolbar-menubar,
-	&:not([sizemode="maximized"]) #TabsToolbar,
-	&[sizemode="maximized"] #titlebar-content,
-	&[sizemode="maximized"] #toolbar-menubar:not([inactive="true"]) + #TabsToolbar {
+	&[tabsintitlebar="true"]:not([sizemode="maximized"])[tabs-on-top] #toolbar-menubar,
+	&[tabs-on-top] #TabsToolbar:not(.browser-titlebar),
+	&[tabs-on-top] #titlebar-content,
+	&[tabs-on-top] #toolbar-menubar:not([inactive="true"]) + #TabsToolbar {
 		.titlebar-buttonbox-container {
 			visibility: collapse !important;
 		}

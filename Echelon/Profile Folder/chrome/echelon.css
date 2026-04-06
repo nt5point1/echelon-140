@@ -41,7 +41,7 @@ window {
 :root:not([echelon-style-6]):not([tabsintitlebar=true]) #appmenu-button-container {
   visibility: collapse !important;
 }
-:root:not([echelon-style-6])[tabsintitlebar=true]:not([sizemode=maximized]) #toolbar-menubar .titlebar-buttonbox-container, :root:not([echelon-style-6]):not([sizemode=maximized]) #TabsToolbar .titlebar-buttonbox-container, :root:not([echelon-style-6])[sizemode=maximized] #titlebar-content .titlebar-buttonbox-container, :root:not([echelon-style-6])[sizemode=maximized] #toolbar-menubar:not([inactive=true]) + #TabsToolbar .titlebar-buttonbox-container {
+:root:not([echelon-style-6])[tabsintitlebar=true]:not([sizemode=maximized])[tabs-on-top] #toolbar-menubar .titlebar-buttonbox-container, :root:not([echelon-style-6])[tabs-on-top] #TabsToolbar:not(.browser-titlebar) .titlebar-buttonbox-container, :root:not([echelon-style-6])[tabs-on-top] #titlebar-content .titlebar-buttonbox-container, :root:not([echelon-style-6])[tabs-on-top] #toolbar-menubar:not([inactive=true]) + #TabsToolbar .titlebar-buttonbox-container {
   visibility: collapse !important;
 }
 :root:not([echelon-style-6])[echelon-system-style=winxp]:not([sizemode=maximized]):not([lwtheme=true]) #titlebar {
@@ -7699,11 +7699,8 @@ xul|dialog[inbrowserwindow] {
 #TabsToolbar::before {
 	background: var(--content-border-top-image) bottom !important;
 }
-/* duct tape temp fix for caption button mask appearing on bookmarks panel pre 29 */
-:root:not([echelon-style-6]):not([echelon-style-7])[sizemode="maximized"] .titlebar-buttonbox-container {
-  position: absolute !important;
-  right: 0 !important;
-  top: 0 !important;
-  height: auto !important;
-  align-self: flex-start !important;
+
+/* This is what happens when you do not ship Namoroka 3 */
+:root:not([tabs-on-top]) #TabsToolbar .titlebar-buttonbox-container {
+  display: none !important
 }
